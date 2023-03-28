@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "kubernetescluster-f402"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "kubernetescluster-f402"
+  template:
+    metadata:
+      labels:
+        app: "kubernetescluster-f402"
+    spec:
+      containers:
+        - name: "kubernetescluster-f402"
+          image: "azecontainer.azurecr.io/kubernetescluster"
+          ports:
+          - containerPort: 80
