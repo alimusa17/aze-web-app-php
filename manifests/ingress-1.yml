@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "kubernetescluster-f402"
+    labels:
+        app: "kubernetescluster-f402"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: kubernetes-cluster9f5b-kubernetescluster-f402.88fb7298d07f4358b952.westeurope.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "kubernetescluster-f402"
+                servicePort: 80
