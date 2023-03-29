@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "kubernetescluster-cd34"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "kubernetescluster-cd34"
+  template:
+    metadata:
+      labels:
+        app: "kubernetescluster-cd34"
+    spec:
+      containers:
+        - name: "kubernetescluster-cd34"
+          image: "containeraz.azurecr.io/kubernetescluster"
+          ports:
+          - containerPort: 80
